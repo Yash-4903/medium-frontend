@@ -72,3 +72,4 @@ export default defineConfig([
 ])
 ```
 # medium-backend
+# medium-frontend
