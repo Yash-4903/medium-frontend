@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { NavBar } from "./NavBar"
 import axios from "axios"
-import { BACKEND_URL } from "../config"
+import { VITE_BACKEND_URL } from "../config"
 import { useNavigate } from "react-router-dom"
 
 export const AddBlog = () =>{
@@ -21,7 +21,7 @@ export const AddBlog = () =>{
             }} placeholder="Tell Your Story ..."  className=" resize-none capitalize w-full h-96 flex items-start justify-start text-xl font-serif focus:outline-none"></textarea>
             <button onClick={async()=>{
                 try {
-                    const res = await axios.post(`${BACKEND_URL}/api/v1/blog`,{
+                    const res = await axios.post(`${VITE_BACKEND_URL}/api/v1/blog`,{
                         title,
                         content
                     },{

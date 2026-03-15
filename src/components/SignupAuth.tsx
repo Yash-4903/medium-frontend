@@ -2,7 +2,7 @@ import { useState, type ChangeEvent } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { type SignupInput } from "@yash4903/medium-common"
 import axios from "axios"
-import { BACKEND_URL } from "../config"
+import { VITE_BACKEND_URL } from "../config"
 
 
 
@@ -17,7 +17,7 @@ export const SignupAuth = () =>{
     async function sendData(){
         try {
             console.log(userInput)
-            const response = await axios.post(`${BACKEND_URL}/api/v1/user/signup`, userInput) 
+            const response = await axios.post(`${VITE_BACKEND_URL}/api/v1/user/signup`, userInput) 
             const jwt = response.data.jwt
             localStorage.setItem("token", jwt)
             navigate("/blogs")
